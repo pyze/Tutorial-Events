@@ -175,30 +175,6 @@ typedef NS_ENUM(NSInteger, PyzeDeepLinkStatus) {
 + (void) initialize:(NSString *)pyzeAppKey withLogThrottling: (PyzeLogLevel) logLevel;
 
 
-/// @name  Timer Reference to use with timed custom events
-
-/**
- *  Pyze Timer Reference is a time interval since a Pyze internal reference time in seconds with millisecond precision e.g. 6.789 seconds (or 6789 milliseconds)
- *
- *  It is used to time tasks and report in events.
- *
- *  usage:
- *
- *     //Start timing
- *     double referenceFileUploadStart = [Pyze timerReference];
- *     ...
- *     ...
- *     //time and send elapsedSeconds
- *     [PyzeCustomEvent postWithEventName:@“File Uploaded”
- *                     withTimerReference:referenceFileUploadStart];
- *
- */
-+(double) timerReference;
-
-
-
-/// @name Throttling logs for troubleshooting
-
 /**
  *  Log throttling level can be changed anytime in the app
  *
@@ -217,6 +193,26 @@ typedef NS_ENUM(NSInteger, PyzeDeepLinkStatus) {
  */
 +(void) logThrottling:(PyzeLogLevel) logLevel;
 
+
+/// @name  Create Timer Reference to use in Timed Custom Events using PyzeCustomEvent class
+
+/**
+ *  Pyze Timer Reference is a time interval since a Pyze internal reference time in seconds with millisecond precision e.g. 6.789 seconds (or 6789 milliseconds)
+ *
+ *  It is used to time tasks and report in events.
+ *
+ *  usage:
+ *
+ *     //Start timing
+ *     double referenceFileUploadStart = [Pyze timerReference];
+ *     ...
+ *     ...
+ *     //time and send elapsedSeconds
+ *     [PyzeCustomEvent postWithEventName:@“File Uploaded”
+ *                     withTimerReference:referenceFileUploadStart];
+ *
+ */
++(double) timerReference;
 
 
 /// @name Push notification helper APIs
@@ -250,7 +246,7 @@ typedef NS_ENUM(NSInteger, PyzeDeepLinkStatus) {
 
  *  @param userInfo User information received as a payload.
  *
- *  - Since: 2.8.2
+ *  - Since: 2.9.1
  */
 
 +(void) processReceivedRemoteNotificationWithId:(NSString *) identifer withUserInfo:(NSDictionary *) userInfo;
@@ -356,7 +352,7 @@ typedef NS_ENUM(NSInteger, PyzeDeepLinkStatus) {
 + (NSString *)hash:(NSString *)stringToHash;
 
 
-/// @name Deprecated methods
+/// @name Deprecated methods (to be removed in subsequent releases)
 
 /**
  *  Deprecated in favor of static initialize: method
