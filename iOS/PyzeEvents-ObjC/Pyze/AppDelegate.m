@@ -21,7 +21,7 @@
 {
 //    [[Pyze sharedPyze] initializeWithKey:@"nW3V4gQ8S-O4ZjRMDy9d1g"];
 //    [Pyze initialize:@"_6m2fW8WTzWXryElPxHxAA"]; //devmode
-    [Pyze initialize:@"MIzI8Z8PRCCVDMIOKlMalA" withLogThrottling:PyzelogLevelMinimal];
+    [Pyze initialize:@"vywbsks1RaKRnZ1GLL3hBA" withLogThrottling:PyzelogLevelMinimal];
 //    [[Pyze sharedPyze] logThrottling:PyzelogLevelAll];
     return YES;
 }

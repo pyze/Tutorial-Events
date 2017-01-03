@@ -4,6 +4,6 @@
 # use_frameworks!
 
 target 'PyzeEvents-ObjC' do
-pod 'pyze-sdk-iOS'
+pod 'pyze-sdk-iOS’
 end
 

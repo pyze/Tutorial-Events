@@ -487,9 +487,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.robosoft.dictionary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robosoft.in;
 				PRODUCT_NAME = PyzeEvents;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "abc548e1-81f7-4fd0-b817-bec6dc30a13d";
+				PROVISIONING_PROFILE_SPECIFIER = "Robosoft Internal Provisioning Profile";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -508,9 +509,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.robosoft.dictionary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robosoft.in;
 				PRODUCT_NAME = PyzeEvents;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "abc548e1-81f7-4fd0-b817-bec6dc30a13d";
+				PROVISIONING_PROFILE_SPECIFIER = "Robosoft Internal Provisioning Profile";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;

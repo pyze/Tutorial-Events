@@ -52,12 +52,28 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (IBAction)showInAppMessage:(UIButton *)sender
 {
-    [Pyze showInAppNotificationUI:self
-               forDisplayMessages:PyzeInAppTypeAll
-        msgNavBarButtonsTextColor:[UIColor whiteColor]
-          msgNavBarButtonsBgColor:[UIColor grayColor]
-                 msgNavBarBgColor:[UIColor clearColor]
-        msgNavBarCounterTextColor:[UIColor blueColor]];
+    [Pyze showInAppNotificationUIForDisplayMessages:PyzeInAppTypeAll
+                          navigationTextColor:[UIColor whiteColor]
+                              withCompletionHandler:^(PyzeInAppStatus *inAppStatus)
+    {
+        NSLog(@"buttonIndex = %d", (int)inAppStatus.buttonIndex);
+        NSLog(@"message-ID =%@" , inAppStatus.messageID);
+        NSLog(@"campaign-ID = %@", inAppStatus.campaignID);
+        NSLog(@"title = %@",inAppStatus.title);
+        NSLog(@"urlString = %@",inAppStatus.urlString);
+        
+        if (inAppStatus.status == PyzeDeepLinkCallFailed)
+            NSLog(@"DeepLink Call Failed");
+        else if (inAppStatus.status == PyzeDeepLinkCallSuccessful)
+            NSLog(@"DeepLink Call Successful");
+        else if (inAppStatus.status == PyzeDeepLinkNotProvided)
+            NSLog(@"DeepLink Not Provided");
+        
+        //...
+        //Now dismiss the Inapp UI
+        [Pyze dismissInAppNotificationUI:YES];
+    
+    }];
 }
 
 -(void) inAppMessageButtonHandlerWithIndex:(NSInteger) buttonIndex
